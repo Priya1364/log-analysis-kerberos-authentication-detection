@@ -1,55 +1,108 @@
-📌Project Title
-Log Analysis for Kerberos Authentication Failure Detection.
+🔐 Log Analysis: Kerberos Authentication Failure Detection
 
-📜description 
-Analyzed Linux logs to detect repeated Kerberos authentication failures and identify potential brute force attack from suspicious IP.
+📌 Project Overview
+
+This project focuses on analyzing system log data to identify authentication failures related to the Kerberos protocol. The goal is to detect suspicious login activity and understand potential security threats such as unauthorized access attempts.
+
+---
 
 🎯 Objective
-The objective of this project is to analyze system log files and detect suspicious authentication activities such as repeated login failures and possible unauthorized access attempts.
 
-🛠 Tools Used
-Loghub Dataset (Linux Logs)
-Notepad / VS Code
+- To analyze log files and identify Kerberos authentication failures
+- To detect abnormal login behavior from unknown IP addresses
+- To understand how authentication logs help in threat detection
 
-📂 Dataset
-Linux log file from Loghub dataset was used for analysis.
+---
 
-🔍 Analysis Steps
-Extracted the loghub dataset
-Opened Linux log file
-Searched for authentication-related events
-Identified repeated Kerberos authentication failures
-Analyzed IP address behavior
-Observed session activity (open and close events)
+🛠️ Tools Used
 
-🚨 Findings
-Detected multiple Kerberos authentication failures
-The IP address 163.27.187.39 attempted authentication repeatedly (~25 times)
-This indicates a possible brute force attack or unauthorized access attempt
-After several failed attempts, successful session activity was observed
-Logs showed session opened and session closed events, indicating system access
+- LogHub Dataset (Linux/System Logs)
+- Notepad / VS Code
+- Basic log analysis techniques
 
-⚠️ Security Interpretation
-The repeated authentication failures followed by successful login activity may indicate:
-Brute force attack attempt
-Credential guessing
-Possible account compromise risk
+---
 
-✏️ process diagram 
-Attacker IP → Multiple Failed Logins → System Logs  
-                      ↓  
-               One Success Login  
-                      ↓  
-              Session Opened  
-                      ↓  
-              Session Closed 
+📂 Dataset Used
 
-              
-📸 proof of project 
-session closed and “connection established.png 
-session opened- authentication failure.png 
-authentication failed.png 
+- Source: LogHub (Public log dataset)
+- File: Linux system log file
+- Log Type: Authentication logs
 
-📊 Conclusion“
-Log analysis plays an important role in identifying suspicious activities.
-By analyzing authentication logs, potential attacks like brute force attempts can be detected early and prevented.
+---
+
+🔍 Understanding the Log Format
+
+Example Log Entry:
+163.27.39.37 kerberos authentication failed
+
+Explanation:
+
+- 163.27.187.39 → Source IP address
+- Kerberos → Authentication protocol used
+- authentication failed → Login attempt was unsuccessful
+
+---
+
+🚨 Analysis Performed
+
+1. Identification of Authentication Failures
+
+- Observed multiple log entries showing "kerberos authentication failed"
+- Indicates unsuccessful login attempts
+
+2. Suspicious IP Detection
+
+- Same IP address (163.27.39.37) appeared repeatedly
+- Suggests repeated access attempts from a single source
+
+3. Attack Possibility
+
+- Repeated failures may indicate:
+  - Brute force attack
+  - Unauthorized login attempts
+  - Misconfigured authentication system
+
+---
+
+📊 Analysis Flow Diagram
+
+User → Login Attempt → Kerberos Authentication → Log Generated → Analyst Review → Threat Detection
+
+---
+
+🧠 Key Findings
+
+- Multiple Kerberos authentication failures detected
+- Repeated attempts from the same IP address
+- Indicates potential malicious activity
+
+---
+
+⚠️ Security Impact
+
+- Continuous failed authentication attempts can lead to:
+  - Unauthorized system access
+  - Credential attacks
+  - System vulnerability exploitation
+
+---
+
+✅ Conclusion
+
+This project demonstrates how log analysis can be used to detect authentication-related security threats. By identifying repeated Kerberos authentication failures, it is possible to recognize suspicious activity and take preventive measures to secure the system.
+
+---
+
+🚀 Future Improvements
+
+- Use SIEM tools like Splunk for advanced log analysis
+- Automate detection using scripts
+- Generate alerts for repeated authentication failures
+
+---
+
+💬 Interview Explanation
+
+"I analyzed system logs to detect Kerberos authentication failures. I identified repeated failed login attempts from a specific IP address, which indicates a possible brute force or unauthorized access attempt. This project helped me understand real-world log analysis and threat detection."
+
+---
