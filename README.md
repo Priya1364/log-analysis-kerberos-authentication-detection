@@ -62,6 +62,12 @@ Explanation:
   - Unauthorized login attempts
   - Misconfigured authentication system
 
+4.Attackers can try to:
+
+-guess credentials
+-access domain resources
+-escalate privileges
+
 ---
 
 📊 Analysis Flow Diagram
