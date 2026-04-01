@@ -43,8 +43,9 @@ Attacker IP → Multiple Failed Logins → System Logs
               Session Opened  
                       ↓  
               Session Closed 
+
+              
 📸 proof of project 
-log-analysis-kerberos-authentication-detection video 
 session closed and “connection established.png 
 session opened- authentication failure.png 
 authentication failed.png 
