@@ -84,7 +84,17 @@ User → Authentication Request → Kerberos → Log Generated → Analysis → 
   - System compromise
 
 ---
+🔐 What is Kerberos? 
 
+It is an authentication protocol
+Uses tickets instead of passwords
+Works in Windows domain environment
+----
+🎨 Kerberos diagram 
+User → AS (Authentication Server) → TGT Ticket
+      → TGS (Ticket Granting Server) → Service Ticket
+      → Server → Access
+----
 ✅ Conclusion
 
 This project demonstrates how log analysis can be used to detect authentication-related threats. By analyzing Kerberos failure events, suspicious activity can be identified early and necessary security measures can be taken.
